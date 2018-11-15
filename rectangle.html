@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rectangle</title>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+    function Rectangle(length,width) {
+        this.length = length;
+        this.width = width;
+        this.perimeter = function () {
+            return (this.length + this.width)*2;
+        };
+
+        this.area = function () {
+            return this.length*this.width;
+        };
+        this.rectangle = function () {
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, this.length, this.width);
+        }
+    }
+    var myRectangle = new Rectangle(1000,500);
+    var perimeter = myRectangle.perimeter();
+    document.write("</br>" + "Chu vi hình chữ nhật là: "  +perimeter +"</br>");
+    var area = myRectangle.area();
+    document.write("Diện tích hình chữ nhật là: " + area + "</br>");
+    myRectangle.rectangle();
+</script>
+</body>
+</html>
